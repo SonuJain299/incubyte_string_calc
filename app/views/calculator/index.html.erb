@@ -6,11 +6,8 @@
 <% end %>
 <% puts  @result.nil?%>
 <% puts @result%>
-binding.pry
 <% if @result %>
   <h2>Result: <%= @result %></h2>
-<% else %>
-  <h2>No result calculated yet.</h2>
 <% end %>
 <% if @error %>
   <h2 style="color: red;">Error: <%= @error %></h2>
