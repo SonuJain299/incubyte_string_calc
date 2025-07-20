@@ -1,2 +1,13 @@
-<h1>Calculator#index</h1>
-<p>Find me in app/views/calculator/index.html.erb</p>
+<h1>String Calculator</h1>
+
+<%= form_with url: "/calculate", method: :post do %>
+  <%= label_tag :input, "Enter numbers:" %><br>
+  <%= text_area_tag :input, params[:input], rows: 4, cols: 50 %><br><br>
+  <%= submit_tag "Calculate" %>
+<% end %>
+
+<% if @result %>
+  <p><strong>Result:</strong> <%= @result %></p>
+<% elsif @error %>
+  <p style="color: red;"><strong>Error:</strong> <%= @error %></p>
+<% end %>
