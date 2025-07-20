@@ -1,11 +1,9 @@
 <h1>String Calculator</h1>
-<h1><%= @result %></h1>
 <%= form_with url: "/calculate", method: :post, local: true do %>
   <%= label_tag :input, "Enter numbers:" %><br>
   <%= text_area_tag :input, params[:input], rows: 4, cols: 50 %><br><br>
   <%= submit_tag "Calculate" %>
 <% end %>
-
 <% if defined?(@result) && !@result.nil? %>
   <p><strong>Result:</strong> <%= @result %></p>
 <% elsif @error %>
